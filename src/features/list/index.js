@@ -40,38 +40,34 @@ class List extends React.Component {
         
         return (
             <div>
-                <input 
-                    type="text" 
-                    value={this.state.name} 
-                    onChange={this.handleName} />
-                    <input 
-                        type="text" 
-                        value={this.state.tel} 
-                        onChange={this.handleTel} />
-                        <input 
-                            type="text" 
-                            value={this.state.dob} 
-                            onChange={this.handleDOB} />
-                            <input 
-                                type="text" 
-                                value={this.state.cat} 
-                                onChange={this.handleCat} />
-                <button
-                onClick={() => {
-                    this.props.add([this.state.name, this.state.tel, this.state.dob, this.state.cat])
-                    this.setState({ name: '', tel: '', dob: '', cat: '' })
-                }}
-                >Add</button>
-                <ul>
+                <table className="striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact No</th>
+                        <th>Date of Birth</th>
+                        <th>Category</th>
+                        <th className="center">Action</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
                     {
                         this.props.list.map((item, index) =>  
-                            <li key={index}>
-                                {item[0]} | {item[1]} | {item[2]} | {item[3]}
-                            <button onClick={() => {this.props.remove(index)}}>x</button>
-                            </li>
+                        <tr key={index}>
+                        <td>{item[0]}</td>
+                        <td>{item[1]}</td>
+                        <td>{item[2]}</td>
+                        <td>{item[3]}</td>
+                        <td className="center">
+                            <button className="btn green"><i class=" material-icons">edit</i></button>{' '}
+                            <button className="btn red" onClick={() => {this.props.remove(index)}}><i class=" material-icons">clear</i></button>
+                            </td>
+                    </tr>
                         )
                     }
-                </ul>
+                    </tbody>
+                </table>
             </div>
         )
     }
