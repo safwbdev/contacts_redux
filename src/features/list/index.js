@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import { Link } from "react-router-dom";
 
 class List extends React.Component {
     constructor(props){
@@ -60,7 +61,7 @@ class List extends React.Component {
                         <td>{item[2]}</td>
                         <td>{item[3]}</td>
                         <td className="center">
-                            <button className="btn green"><i class=" material-icons">edit</i></button>{' '}
+                            <Link to={`/edit/${index}`} className="btn green"><i class=" material-icons">edit</i></Link>{' '}
                             <button className="btn red" onClick={() => {this.props.remove(index)}}><i class=" material-icons">clear</i></button>
                             </td>
                     </tr>

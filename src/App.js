@@ -1,28 +1,22 @@
 import React from 'react';
 import './App.css';
 import List from './features/list'
-import Form from './features/form'
+import AddForm from './features/addForm'
+import EditForm from './features/editForm'
+import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <div class="nav-wrapper">
+      <Router>
+        <Navbar />
         <div class="container">
-          {/* <a href="#" class="brand-logo">Logo</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li> 
-          </ul>
-            */}
+          <Route path="/" exact ><AddForm /><List/></Route>
+          <Route path="/edit/:id" component={EditForm} />
         </div>
-        </div>
-      </nav>
-      <div class="container">
-        <Form />
-        <List />
-      </div>
+      </Router>
     </div>
   );
 }
