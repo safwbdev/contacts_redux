@@ -57,26 +57,21 @@ class List extends React.Component {
                 Header: 'Full Name',
                 accessor: 'name',
                 foldable: false,
-                // minWidth: 120,
-                
             },
             {
                 Header: 'Contact',
                 accessor: 'contact',
                 foldable: false,
-                // minWidth: 60,
             }, 
             {
                 Header: 'Date of Birth',
                 accessor: 'dob',
                 foldable: false,
-                // minWidth: 100,
             }, 
             {
                 Header: 'Category',
                 accessor: 'cat',
                 foldable: false,
-                // minWidth: 60,
             }, 
             {
                 Header: 'Actions',
@@ -84,7 +79,6 @@ class List extends React.Component {
                 foldable: false,
                 sortable: false,
                 className: 'center',
-                // minWidth: 60,
                 Cell: props =>  <div>
                                     <Link to={`/edit/${props.value}`} className="btn green"><i className=" material-icons">edit</i></Link>{' '}
                                     <button className="btn red" onClick={() => {this.props.remove(props.value)}}><i className=" material-icons">clear </i></button>
@@ -94,17 +88,24 @@ class List extends React.Component {
 
         return <div className="section">
                     <div className="row">
-                        <div className="xl12 l12 s12 right">
+                        <div className="col xl9 l9 m9 s6 count">
+                            Showing <strong>{this.props.list.length}</strong> contacts
+                        </div>
+                        <div className="col xl3 l3 m3 s6">
                             <Link to={'/new'} className="btn blue add-new">
                                 <i className=" material-icons">add </i>{' '}Add new contact
                             </Link>
                         </div>
-
-                        <div className="col xl12 l12 s12 count">
-                         Showing <strong>{this.props.list.length}</strong> contacts
-                        </div>
                     </div>
-                    <ReactTable data={data} columns={columns} minRows={10} defaultPageSize={10} />
+                    <ReactTable 
+                        data={data} 
+                        columns={columns} 
+                        minRows={10} 
+                        defaultPageSize={10}
+                        showPagination={true}
+                        showPaginationTop={false}
+                        showPaginationBottom={true}
+                    />
                 </div>
     }
 

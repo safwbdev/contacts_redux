@@ -52,7 +52,7 @@ class AddForm extends React.Component {
             <div>
                 <div className="row">
                     <div className="col s12">
-                        <h3>New Contact</h3>
+                        <h4>New Contact</h4>
                     </div>
                     <div className="input-field col xl6 l6 m6 s12">
                         <input 
@@ -84,45 +84,30 @@ class AddForm extends React.Component {
                             <option value="Colleague">Colleague</option>
                         </select>
                     </div>
-                    {/* <div className="input-field col xl1 l1 s12">
-                        {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
-                        ? 
-                        (<button className="btn blue" disabled>Add</button>) 
-                        :
-                        (<button
-                            className="btn blue"
-                            onClick={() => {
-                                var d = this.state.dob.toLocaleDateString().split("/"); 
-                                var y = d.splice(-1)[0];
-                                d.splice(0, 0, y);
-                                var newDate = d.join("-");
-                                this.props.add([this.state.name, this.state.tel, newDate, this.state.cat])
-                                this.setState({ name: '', tel: '', dob: '', cat: '' })
-                            }}>Add</button>)
-                        }
-                    </div> */}
                 </div>
                 <div className="row form-buttons">
                     <div className="col s6 ">
                         <Link className="btn teal" to="/" >Go Back</Link>
                     </div>
                     <div className="col s6 right-align">
-                    {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
-                        ? 
-                        (<button className="btn blue" disabled>Add</button>) 
-                        :
-                        (<button
-                            className="btn blue"
-                            onClick={() => {
-                                var d = this.state.dob.toLocaleDateString().split("/"); 
-                                var y = d.splice(-1)[0];
-                                d.splice(0, 0, y);
-                                var newDate = d.join("-");
-                                this.props.add([this.state.name, this.state.tel, newDate, this.state.cat])
-                                this.setState({ name: '', tel: '', dob: '', cat: '' })
-                                this.props.history.push('/');
-                            }}>Add</button>)
+                        {(isNaN(this.state.tel)) ? (<div className="error">Contact No. should be a number</div> ) : ('')}{' '}
+                        {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
+                            ? 
+                            (<button className="btn blue" disabled>Add</button>) 
+                            :
+                            (<button
+                                className="btn blue"
+                                onClick={() => {
+                                    var d = this.state.dob.toLocaleDateString().split("/"); 
+                                    var y = d.splice(-1)[0];
+                                    d.splice(0, 0, y);
+                                    var newDate = d.join("-");
+                                    this.props.add([this.state.name, this.state.tel, newDate, this.state.cat])
+                                    this.setState({ name: '', tel: '', dob: '', cat: '' })
+                                    this.props.history.push('/');
+                                }}>Add</button>)
                         }
+
                     </div>
                 </div>
             </div>

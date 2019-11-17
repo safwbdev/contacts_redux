@@ -19,9 +19,6 @@ select{
     text-align: left;
   }
 }
-// .rt-th.rt-resizable-header:not(:last-child) {
-//   text-align: left;
-// }
 .rt-thead .rt-resizable-header {
   overflow: visible;
   display: flex;
@@ -83,6 +80,25 @@ select{
       }
     }
   }
+}
+.error{
+  background: #ffffff;
+  color: red;
+  box-shadow: none;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: .5px;
+  font-size: 14px;
+  outline: 0;border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+
 }
 
 @media only screen and (max-width: 768px){

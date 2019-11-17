@@ -41,7 +41,7 @@ class EditForm extends React.Component {
             <div>
                 <div className="row">
                     <div className="col s12">
-                        <h3>Update Contact</h3>
+                        <h4>Update Contact</h4>
                     </div>
                     <div className="input-field col xl6 l6 m6 s12">
                         <input 
@@ -80,6 +80,7 @@ class EditForm extends React.Component {
                         <Link className="btn teal" to="/" >Go Back</Link>
                     </div>
                     <div className="col s6 right-align">
+                    {(isNaN(this.state.tel)) ? (<div className="error">Contact No. should be a number</div> ) : ('')}{' '}
                         {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
                         ? 
                         (<button className="btn blue " disabled>Update</button>) 
@@ -89,7 +90,7 @@ class EditForm extends React.Component {
                             onClick={() => {
                                 this.props.add([this.state.name, this.state.tel, this.state.dob, this.state.cat])
                                 this.setState({ name: '', tel: '', dob: '', cat: '' })
-                            }}>Update</button>)
+                            }} disabled>Update</button>)
                         }
                     </div>
                 </div>

@@ -6,12 +6,12 @@ export default class Navbar extends Component {
     render() {
         return (
             <nav>
-            <div className="nav-wrapper">
-                <div className="container">
-                    <Link to="/" className="brand-logo center" >Contact Manager</Link>
+                <div className="nav-wrapper">
+                    <div className="container">
+                        <Link to="/" className="brand-logo center" >Contact Manager</Link>
+                    </div>
                 </div>
-            </div>
-          </nav>
+            </nav>
         )
     }
 }
