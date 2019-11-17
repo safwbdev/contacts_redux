@@ -88,9 +88,14 @@ class EditForm extends React.Component {
                         (<button
                             className="btn blue"
                             onClick={() => {
-                                this.props.add([this.state.name, this.state.tel, this.state.dob, this.state.cat])
+                                // edit pseudo code
+                                //----------------------
+                                // this.props.remove(this.props.match.params.id)
+                                // this.props.add([this.state.name, this.state.tel, this.state.dob, this.state.cat])
+                                //----------------------
                                 this.setState({ name: '', tel: '', dob: '', cat: '' })
-                            }} disabled>Update</button>)
+                                this.props.history.push('/');
+                            }} >Update</button>)
                         }
                     </div>
                 </div>
