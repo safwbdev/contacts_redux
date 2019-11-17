@@ -99,6 +99,10 @@ class List extends React.Component {
                                 <i className=" material-icons">add </i>{' '}Add new contact
                             </Link>
                         </div>
+
+                        <div className="col xl12 l12 s12 count">
+                         Showing <strong>{this.props.list.length}</strong> contacts
+                        </div>
                     </div>
                     <ReactTable data={data} columns={columns} minRows={10} defaultPageSize={10} />
                 </div>
