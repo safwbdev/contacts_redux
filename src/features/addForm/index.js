@@ -42,22 +42,22 @@ class AddForm extends React.Component {
         
         return (
             <div>
-                <div class="row">
-                    <div class="input-field col s3">
+                <div className="row">
+                    <div className="input-field col s3">
                         <input 
                             type="text" 
                             placeholder="Full Name"
                             value={this.state.name} 
                             onChange={this.handleName} />
                     </div>
-                    <div class="input-field col s3">
+                    <div className="input-field col s3">
                         <input 
                             type="text" 
                             placeholder="Contact No."
                             value={this.state.tel} 
                             onChange={this.handleTel} />
                     </div>
-                    <div class="input-field col s3">
+                    <div className="input-field col s3">
                         <input 
                             type="text" 
                             placeholder="Date of Birth"
@@ -69,17 +69,17 @@ class AddForm extends React.Component {
                             placeholderText="Date of Birth"
                             onChange={this.handleDOB} /> */}
                     </div>
-                    <div class="input-field col s3">
+                    <div className="input-field col s2">
                         <select
-                        value={this.state.cat} 
-                        onChange={this.handleCat} >
-                            <option value="" disabled selected>Select Category</option>
+                            defaultValue={'DEFAULT'}
+                            onChange={this.handleCat} >
+                            <option value="DEFAULT" disabled>Select Category</option>
                             <option value="Family">Family</option>
                             <option value="Friend">Friend</option>
                             <option value="Colleague">Colleague</option>
                         </select>
                     </div>
-                    <div class=" s12 right">
+                    <div className="input-field col s1">
                         {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
                         ? 
                         (<button className="btn blue" disabled>Add</button>) 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-table/react-table.css'
 import List from './features/list'
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <div class="container">
+        <div className="container">
           <Route path="/" exact ><AddForm /><List/></Route>
           <Route path="/edit/:id" component={EditForm} />
         </div>

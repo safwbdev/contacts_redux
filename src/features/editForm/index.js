@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import { Link } from "react-router-dom";
 
 class EditForm extends React.Component {
     constructor(props){
@@ -39,6 +40,9 @@ class EditForm extends React.Component {
         return (
             <div>
                 <div class="row">
+                    <div class="col s12">
+                        <h3>Update Contact</h3>
+                    </div>
                     <div class="input-field col s6">
                         <input 
                             type="text" 
@@ -70,10 +74,13 @@ class EditForm extends React.Component {
                             <option value="Colleague">Colleague</option>
                         </select>
                     </div>
-                    <div class=" s12 right">
+                    </div>
+                    <div className="row">
+                    <div class="col s6 "><Link className="btn teal" to="/" >Go Back</Link></div>
+                    <div class="col s6 right-align">
                         {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
                         ? 
-                        (<button className="btn blue" disabled>Update</button>) 
+                        (<button className="btn blue " disabled>Update</button>) 
                         :
                         (<button
                             className="btn blue"

@@ -42,41 +42,60 @@ class List extends React.Component {
         const data = []
 
         this.props.list.map((item, index) => {
-            console.log(index) 
-            data.push({idNo: index, name: item[0], contact: item[1], dob:item[2], cat:item[3] })
+            // console.log(index) 
+            data.push({
+                idNo: index, 
+                name: item[0], 
+                contact: item[1], 
+                dob:item[2], 
+                cat:item[3] 
+            })
 
-        }
+        })
 
-        
-                        )
         const columns = [
             {
                 Header: 'Full Name',
-                accessor: 'name'
+                accessor: 'name',
+                foldable: false,
+                minWidth: 120,
+                
             },
             {
                 Header: 'Contact',
-                accessor: 'contact'
+                accessor: 'contact',
+                foldable: false,
+                minWidth: 60,
             }, 
             {
                 Header: 'Date of Birth',
-                accessor: 'dob'
+                accessor: 'dob',
+                foldable: false,
+                minWidth: 100,
             }, 
             {
                 Header: 'Category',
-                accessor: 'cat'
+                accessor: 'cat',
+                foldable: false,
+                minWidth: 60,
             }, 
             {
                 Header: 'Actions',
                 accessor: 'idNo',
-                Cell: props => <div>
-                            <Link to={`/edit/${props.value}`} className="btn green"><i class=" material-icons">edit</i></Link>{' '}
-                            <button className="btn red" onClick={() => {this.props.remove(props.value)}}><i class=" material-icons">clear </i></button>
-                    </div>
+                foldable: false,
+                sortable: false,
+                className: 'center',
+                minWidth: 60,
+                Cell: props =>  <div>
+                                    <Link to={`/edit/${props.value}`} className="btn green"><i className=" material-icons">edit</i></Link>{' '}
+                                    <button className="btn red" onClick={() => {this.props.remove(props.value)}}><i className=" material-icons">clear </i></button>
+                                </div>
             },
         ]
 
-          return <ReactTable data={data} columns={columns} />
+          return <ReactTable data={data} columns={columns} 
+          minRows={10} defaultPageSize={10}
+           />
     }
 
 }
