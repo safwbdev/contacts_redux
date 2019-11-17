@@ -41,7 +41,6 @@ select{
   &.-even{
     background: #ffffff;
   }
-
  }
 .pagination-bottom{
   .-pagination{
@@ -87,9 +86,26 @@ select{
 }
 
 @media only screen and (max-width: 768px){
-.form-buttons{
-  .btn{
-    width: 100%;
+  .form-buttons{
+    .btn{
+      width: 100%;
+    }
   }
-}
+  .ReactTable .rt-thead .rt-resizable-header{
+    width: 200px !important;
+    background: #f3f3f3;
+  }
+  .ReactTable .rt-tbody {
+    overflow: unset !important;
+  }
+  .ReactTable .rt-tbody .rt-td{
+    width: 200px !important;
+
+  }
+
+ .rt-tr{
+    background: #ffffff !important;
+  
+
+ }
 }

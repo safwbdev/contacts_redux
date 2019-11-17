@@ -57,26 +57,26 @@ class List extends React.Component {
                 Header: 'Full Name',
                 accessor: 'name',
                 foldable: false,
-                minWidth: 120,
+                // minWidth: 120,
                 
             },
             {
                 Header: 'Contact',
                 accessor: 'contact',
                 foldable: false,
-                minWidth: 60,
+                // minWidth: 60,
             }, 
             {
                 Header: 'Date of Birth',
                 accessor: 'dob',
                 foldable: false,
-                minWidth: 100,
+                // minWidth: 100,
             }, 
             {
                 Header: 'Category',
                 accessor: 'cat',
                 foldable: false,
-                minWidth: 60,
+                // minWidth: 60,
             }, 
             {
                 Header: 'Actions',
@@ -84,7 +84,7 @@ class List extends React.Component {
                 foldable: false,
                 sortable: false,
                 className: 'center',
-                minWidth: 60,
+                // minWidth: 60,
                 Cell: props =>  <div>
                                     <Link to={`/edit/${props.value}`} className="btn green"><i className=" material-icons">edit</i></Link>{' '}
                                     <button className="btn red" onClick={() => {this.props.remove(props.value)}}><i className=" material-icons">clear </i></button>

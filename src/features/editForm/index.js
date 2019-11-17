@@ -43,28 +43,28 @@ class EditForm extends React.Component {
                     <div className="col s12">
                         <h3>Update Contact</h3>
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col xl6 l6 m6 s12">
                         <input 
                             type="text" 
                             placeholder="Full Name"
                             value={this.state.name} 
                             onChange={this.handleName} />
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col xl6 l6 m6 s12">
                         <input 
                             type="text" 
                             placeholder="Contact No."
                             value={this.state.tel} 
                             onChange={this.handleTel} />
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col xl6 l6 m6 s12">
                         <input 
                             type="text" 
                             placeholder="Date of Birth"
                             value={this.state.dob} 
                             onChange={this.handleDOB} />
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col xl6 l6 m6 s12">
                         <select
                                 defaultValue={'DEFAULT'}
                                 onChange={this.handleCat} >

@@ -54,27 +54,27 @@ class AddForm extends React.Component {
                     <div className="col s12">
                         <h3>New Contact</h3>
                     </div>
-                    <div className="input-field col xl6 l6 s12">
+                    <div className="input-field col xl6 l6 m6 s12">
                         <input 
                             type="text" 
                             placeholder="Full Name"
                             value={this.state.name} 
                             onChange={this.handleName} />
                     </div>
-                    <div className="input-field col xl6 l6 s12">
+                    <div className="input-field col xl6 l6 m6 s12">
                         <input 
                             type="text" 
                             placeholder="Contact No."
                             value={this.state.tel} 
                             onChange={this.handleTel} />
                     </div>
-                    <div className="input-field col xl6 l6 s12">
+                    <div className="input-field col xl6 l6 m6 s12">
                         <DatePicker
                             selected={this.state.dob}
                             placeholderText="Date of Birth"
                             onChange={this.handleDOB} />
                     </div>
-                    <div className="input-field col xl6 l6 s12">
+                    <div className="input-field col xl6 l6 m6 s12">
                         <select
                             defaultValue={'DEFAULT'}
                             onChange={this.handleCat} >
