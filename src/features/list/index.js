@@ -42,7 +42,6 @@ class List extends React.Component {
         const data = []
 
         this.props.list.map((item, index) => {
-            // console.log(index) 
             data.push({
                 idNo: index, 
                 name: item[0], 
@@ -50,7 +49,7 @@ class List extends React.Component {
                 dob:item[2], 
                 cat:item[3] 
             })
-
+            return undefined
         })
 
         const columns = [
@@ -93,9 +92,16 @@ class List extends React.Component {
             },
         ]
 
-          return <ReactTable data={data} columns={columns} 
-          minRows={10} defaultPageSize={10}
-           />
+        return <div className="section">
+                    <div className="row">
+                        <div className="xl12 l12 s12 right">
+                            <Link to={'/new'} className="btn blue add-new">
+                                <i className=" material-icons">add </i>{' '}Add new contact
+                            </Link>
+                        </div>
+                    </div>
+                    <ReactTable data={data} columns={columns} minRows={10} defaultPageSize={10} />
+                </div>
     }
 
 }

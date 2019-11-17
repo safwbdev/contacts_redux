@@ -15,7 +15,9 @@ function App() {
       <Router>
         <Navbar />
         <div className="container">
-          <Route path="/" exact ><AddForm /><List/></Route>
+          {/* <Route path="/" exact ><AddForm /><List/></Route> */}
+          <Route path="/" exact component={List} />
+          <Route path="/new" exact component={AddForm} />
           <Route path="/edit/:id" component={EditForm} />
         </div>
       </Router>

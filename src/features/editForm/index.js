@@ -39,45 +39,47 @@ class EditForm extends React.Component {
     render(){        
         return (
             <div>
-                <div class="row">
-                    <div class="col s12">
+                <div className="row">
+                    <div className="col s12">
                         <h3>Update Contact</h3>
                     </div>
-                    <div class="input-field col s6">
+                    <div className="input-field col s6">
                         <input 
                             type="text" 
                             placeholder="Full Name"
                             value={this.state.name} 
                             onChange={this.handleName} />
                     </div>
-                    <div class="input-field col s6">
+                    <div className="input-field col s6">
                         <input 
                             type="text" 
                             placeholder="Contact No."
                             value={this.state.tel} 
                             onChange={this.handleTel} />
                     </div>
-                    <div class="input-field col s6">
+                    <div className="input-field col s6">
                         <input 
                             type="text" 
                             placeholder="Date of Birth"
                             value={this.state.dob} 
                             onChange={this.handleDOB} />
                     </div>
-                    <div class="input-field col s6">
+                    <div className="input-field col s6">
                         <select
-                        value={this.state.cat} 
-                        onChange={this.handleCat} >
-                            <option value="" disabled selected>Select Category</option>
-                            <option value="Family">Family</option>
-                            <option value="Friend">Friend</option>
-                            <option value="Colleague">Colleague</option>
+                                defaultValue={'DEFAULT'}
+                                onChange={this.handleCat} >
+                                <option value="DEFAULT" disabled>Select Category</option>
+                                <option value="Family">Family</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Colleague">Colleague</option>
                         </select>
                     </div>
+                </div>
+                <div className="row">
+                    <div className="col s6 ">
+                        <Link className="btn teal" to="/" >Go Back</Link>
                     </div>
-                    <div className="row">
-                    <div class="col s6 "><Link className="btn teal" to="/" >Go Back</Link></div>
-                    <div class="col s6 right-align">
+                    <div className="col s6 right-align">
                         {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
                         ? 
                         (<button className="btn blue " disabled>Update</button>) 

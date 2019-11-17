@@ -1,5 +1,17 @@
+
+.brand-logo{
+  width: 100%;
+  float: left;
+  display: block;
+}
 select{
   display: block !important;
+}
+.react-datepicker-wrapper{
+  width: 100%;
+}
+.add-new{
+  display: flex;
 }
 .rt-thead{
   &.-header{
@@ -72,4 +84,12 @@ select{
       }
     }
   }
+}
+
+@media only screen and (max-width: 768px){
+.form-buttons{
+  .btn{
+    width: 100%;
+  }
+}
 }
