@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
 
@@ -7,7 +8,7 @@ export default class Navbar extends Component {
             <nav>
             <div class="nav-wrapper">
             <div class="container">
-                Contact Manager
+                <Link to="/" >Contact Manager</Link>
             </div>
             </div>
           </nav>

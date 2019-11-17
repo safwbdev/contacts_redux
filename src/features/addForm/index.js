@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import DatePicker from "react-datepicker";
 
 class AddForm extends React.Component {
     constructor(props){
@@ -27,6 +28,7 @@ class AddForm extends React.Component {
     }
     handleDOB(e){
         this.setState({
+            // dob: e
             dob: e.target.value
         })
     }
@@ -61,6 +63,11 @@ class AddForm extends React.Component {
                             placeholder="Date of Birth"
                             value={this.state.dob} 
                             onChange={this.handleDOB} />
+
+                        {/* <DatePicker
+                            selected={this.state.dob}
+                            placeholderText="Date of Birth"
+                            onChange={this.handleDOB} /> */}
                     </div>
                     <div class="input-field col s3">
                         <select
