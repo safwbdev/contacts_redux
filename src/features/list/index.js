@@ -101,7 +101,7 @@ class List extends React.Component {
                         data={data} 
                         columns={columns} 
                         minRows={5} 
-                        defaultPageSize={10}
+                        defaultPageSize={5}
                         showPagination={true}
                         showPaginationTop={false}
                         showPaginationBottom={true}
