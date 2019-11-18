@@ -2,6 +2,10 @@
 
 In the project directory, you run the following command in your terimnal:
 
+### `npm install`
+
+Then run the following command to start the App:
+
 ### `npm start`
 
 All data submitted in the Add Form will be stored into localStorage.
