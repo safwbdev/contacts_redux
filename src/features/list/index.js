@@ -100,7 +100,7 @@ class List extends React.Component {
                     <ReactTable 
                         data={data} 
                         columns={columns} 
-                        minRows={10} 
+                        minRows={5} 
                         defaultPageSize={10}
                         showPagination={true}
                         showPaginationTop={false}
