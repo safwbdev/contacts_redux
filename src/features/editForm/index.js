@@ -81,7 +81,7 @@ class EditForm extends React.Component {
                     </div>
                     <div className="col s6 right-align">
                     {(isNaN(this.state.tel)) ? (<div className="error">Contact No. should be a number</div> ) : ('')}{' '}
-                        {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
+                        {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') || (isNaN(this.state.tel))
                         ? 
                         (<button className="btn blue " disabled>Update</button>) 
                         :
@@ -92,10 +92,10 @@ class EditForm extends React.Component {
                                 //----------------------
                                 // this.props.remove(this.props.match.params.id)
                                 // this.props.add([this.state.name, this.state.tel, this.state.dob, this.state.cat])
+                                // this.setState({ name: '', tel: '', dob: '', cat: '' })
+                                // this.props.history.push('/');
                                 //----------------------
-                                this.setState({ name: '', tel: '', dob: '', cat: '' })
-                                this.props.history.push('/');
-                            }} >Update</button>)
+                            }} disabled>Update</button>)
                         }
                     </div>
                 </div>

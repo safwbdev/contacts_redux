@@ -91,7 +91,7 @@ class AddForm extends React.Component {
                     </div>
                     <div className="col s6 right-align">
                         {(isNaN(this.state.tel)) ? (<div className="error">Contact No. should be a number</div> ) : ('')}{' '}
-                        {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') 
+                        {(this.state.name ==='') || (this.state.tel ==='')  || (this.state.dob ==='')  || (this.state.cat ==='') || (isNaN(this.state.tel))
                             ? 
                             (<button className="btn blue" disabled>Add</button>) 
                             :
